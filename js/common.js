@@ -9,8 +9,12 @@ function ajax(type, url, data, maskShow) {
 		}); //callback为用户点击蒙版时自动执行的回调；
 		mask.show(); //显示遮罩		
 	}
+	//如果为get 请求则不会将data转为json
+	if(type.toUpperCase()!="GET"){
+		data = JSON.stringify(data)
+	}
 	return $.ajax({
-		data: JSON.stringify(data),
+		data: data,
 		url: url,
 		type: type,
 		contentType: "application/json;charset=utf-8",
