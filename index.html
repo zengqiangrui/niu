@@ -1,25 +1,84 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-    <title></title>
-    <link href="css/mui.min.css" rel="stylesheet"/>
-	<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.min.js"></script>
-    <script src="js/mui.min.js"></script>
-	<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
-    <script type="text/javascript" charset="utf-8">
-      	mui.init();
-		function show(){
-			var request = ajax("put","http://127.0.0.1:19999/testPut",{"name":"qiangrui"},true)
-			handleAjax(request,function(res){
-				mui.alert(res)
-			})
-		}
-    </script>
-</head>
-<body>
-	<h1>hello world</h1>
-	<button type="button" onclick="show()">hello</button>
-</body>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.min.js"></script>
+		<script src="js/mui.min.js"></script>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+
+			function show() {
+				var request = ajax("put", "http://127.0.0.1:19999/testPut", {
+					"name": "qiangrui"
+				}, true)
+				handleAjax(request, function(res) {
+					mui.alert(res)
+				});
+			}
+			$(function() {
+				$("#o1").click(function() {
+					$("#oi1").attr("src", "icons/rank-gold.png")
+					$("#oi2").attr("src", "icons/trade.png")
+					$("#oi3").attr("src", "icons/person.png")
+				});
+				$("#o2").click(function() {
+					$("#oi1").attr("src", "icons/rank.png")
+					$("#oi2").attr("src", "icons/trade-gold.png")
+					$("#oi3").attr("src", "icons/person.png")
+				});
+				$("#o3").click(function() {
+					$("#oi1").attr("src", "icons/rank.png")
+					$("#oi2").attr("src", "icons/trade.png")
+					$("#oi3").attr("src", "icons/person-gold.png")
+				});
+
+			});
+		</script>
+	</head>
+	<body style="background-color: #222222;">
+		<!-- <header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">底部选项卡-div模式</h1>
+		</header> -->
+		<nav class="mui-bar mui-bar-tab" style="background-color: gray;">
+			<!-- <a id="o1" class="mui-tab-item mui-active" href="#re1">
+				<img id="oi1" src="icons/rank.png" class="mui-icon " />
+				<span class="mui-tab-label">首页</span>
+			</a> -->
+			<a id="o1" class="mui-tab-item mui-active" href="#re1">
+				<img id="oi1" src="icons/rank.png" class="mui-icon " />
+				<span id="oi12" class="mui-tab-label">首页</span>
+			</a>
+			<a id="o2" class="mui-tab-item" href="#re2">
+				<img id="oi2" src="icons/trade.png" class="mui-icon " />
+				<span class="mui-tab-label">消息</span>
+			</a>
+			<a id="o3" class="mui-tab-item" href="#re3">
+				<img id="oi3" src="icons/person.png" class="mui-icon " />
+				<span class="mui-tab-label">通讯录</span>
+			</a>
+		</nav>
+
+
+		<div id="re1" class="mui-control-content mui-active">
+			<h1 style="color: wheat;">Hello !!</h1>
+		</div>
+
+		<div id="re2" class="mui-control-content">
+			<h1 style="color: wheat;">World</h1>
+		</div>
+
+		<div id="re3" class="mui-control-content">
+			<h1 style="color: wheat;">Hello</h1>
+		</div>
+
+
+
+
+
+	</body>
 </html>
