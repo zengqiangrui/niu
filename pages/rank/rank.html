@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="../../js/mui.min.js"></script>
+		<link href="../../css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css">
+		<link rel="stylesheet" href="../../css/rank.css" type="text/css" />
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+		</script>
+		<script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+	</head>
+
+	<body style="background-color: #222222;">
+
+		<!--<header class="mui-bar mui-bar-nav" style="background-color: #000000;">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left " style="color: white;"></a>
+			<h3 class="mui-title" style="color: white;">牛人榜</h3>
+			<span class="mui-icon mui-icon-bars mui-pull-right" style="color: white;"></span>
+		</header>-->
+		<header id="header" class="mui-bar mui-bar-transparent">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title" style="color: white;">牛人榜</h1>
+			<a class=" mui-icon mui-icon mui-icon-info mui-pull-right"></a>
+		</header>
+		<div class="mui-content">
+			<!--<div class="topcontext">-->
+				<div class="content">
+					<div class="bangdan">总收益榜</div>
+					<div class="bangdanOne">月收益榜</div>
+					<div class="bangdanTwo">周收益榜</div>
+				</div>
+			<!--</div>-->
+			<div id="niu">
+				<div class="head" v-for="site in sites">
+					<div class="top">
+						<div class="headone">
+							<div class="niuren"></div>
+							<div class="headtwo">
+								<div class="name">{{site.name}}</div>
+								<div class="jianjie">{{site.jianjie}}</div>
+							</div>
+						</div>
+						<div class="guanzhu">+&nbsp;&nbsp;&nbsp;&nbsp;牛人</div>
+					</div>
+					<div class="bottom">
+						<div class="bottomLeft">
+							<div class="shouyiOne">{{site.zongshouyi}}</div>
+							<div class="shouyitwo">总收益率</div>
+						</div>
+						<div class="bottomMiddle">
+							<div class="shouyiOne">{{site.yueshouyi}}</div>
+							<div class="shouyitwo">月均收益率</div>
+						</div>
+						<div class="bottomRight">
+							<div class="shouyiOne">{{site.shenglv}}</div>
+							<div class="shouyitwo">胜率</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<script>
+			new Vue({
+				el: '#niu',
+				data: {
+					sites: [{
+							name: '股琴A',
+							jianjie: '曾获世界影响华人大奖牛逼哔哔哔哔哔哔哔哔哔哔',
+							zongshouyi: '1922.55%',
+							yueshouyi: '74.%',
+							shenglv: '68.5%',
+						},
+						{
+							name: '股琴B',
+							jianjie: '人大奖牛逼哔哔哔哔哔哔哔哔哔哔',
+							zongshouyi: '1922.55%',
+							yueshouyi: '74.17%',
+							shenglv: '68%',
+						},
+						{
+							name: '股琴A',
+							jianjie: '曾获世界影响华人大奖牛逼哔哔哔哔哔哔哔哔哔哔',
+							zongshouyi: '1922.55%',
+							yueshouyi: '74.%',
+							shenglv: '68.5%',
+						},
+						{
+							name: '股琴B',
+							jianjie: '人大奖牛逼哔哔哔哔哔哔哔哔哔哔',
+							zongshouyi: '1922.55%',
+							yueshouyi: '74.17%',
+							shenglv: '68%',
+						},
+						{
+							name: '股琴B',
+							jianjie: '人大奖牛逼哔哔哔哔哔哔哔哔哔哔',
+							zongshouyi: '1922.55%',
+							yueshouyi: '74.17%',
+							shenglv: '68%',
+						},
+						{
+							name: '股琴B',
+							jianjie: '人大奖牛逼哔哔哔哔哔哔哔哔哔哔',
+							zongshouyi: '1922.55%',
+							yueshouyi: '74.17%',
+							shenglv: '68%',
+						},
+						{
+							name: '股琴B',
+							jianjie: '人大奖牛逼哔哔哔哔哔哔哔哔哔哔',
+							zongshouyi: '1922.55%',
+							yueshouyi: '74.17%',
+							shenglv: '68%',
+						}
+					]
+				}
+			})
+		</script>
+	</body>
+
+</html>
