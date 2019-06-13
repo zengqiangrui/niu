@@ -1,24 +1,192 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-    <title></title>
-    <link href="css/mui.min.css" rel="stylesheet"/>
-	<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.min.js"></script>
-    <script src="js/mui.min.js"></script>
-	<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
-    <script type="text/javascript" charset="utf-8">
-      	mui.init();
-		function show(){
-			var request = ajax("put","http://127.0.0.1:19999/testPut",{"name":"qiangrui"},true)
-			handleAjax(request,function(res){
-				mui.alert(res)
-			})
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.min.js"></script>
+		<script src="js/mui.min.js"></script>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+
+			function show() {
+				var request = ajax("put", "http://127.0.0.1:19999/testPut", {
+					"name": "qiangrui"
+				}, true)
+				handleAjax(request, function(res) {
+					mui.alert(res)
+				});
+			}
+			$(function() {
+				$("#o1").click(function() {
+					$("#oi1").attr("src", "icons/rank-gold.png")
+					$("#oi2").attr("src", "icons/trade.png")
+					$("#oi3").attr("src", "icons/person.png")
+					$("#ois1").css("color", "gold")
+					$("#ois2").css("color", "#222222")
+					$("#ois3").css("color", "#222222")
+				});
+				$("#o2").click(function() {
+					$("#oi1").attr("src", "icons/rank.png")
+					$("#oi2").attr("src", "icons/trade-gold.png")
+					$("#oi3").attr("src", "icons/person.png")
+					$("#ois1").css("color", "#222222")
+					$("#ois2").css("color", "gold")
+					$("#ois3").css("color", "#222222")
+				});
+				$("#o3").click(function() {
+					$("#oi1").attr("src", "icons/rank.png")
+					$("#oi2").attr("src", "icons/trade.png")
+					$("#oi3").attr("src", "icons/person-gold.png")
+					$("#ois1").css("color", "#222222")
+					$("#ois2").css("color", "#222222")
+					$("#ois3").css("color", "gold")
+				});
+
+			});
+		
+		</script>
+	</head>
+	<body style="background-color: #222222;">
+		<!-- <header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">底部选项卡-div模式</h1>
+		</header> -->
+		<nav class="mui-bar mui-bar-tab" style="background-color: gray;">
+			<a id="o1" class="mui-tab-item mui-active" href="#re1">
+				<img id="oi1" src="icons/rank-gold.png" class="mui-icon " />
+				<span id="ois1" class="mui-tab-label" style="color: gold;">排行</span>
+			</a>
+			<a id="o2" class="mui-tab-item" href="#re2">
+				<img id="oi2" src="icons/trade.png" class="mui-icon " />
+				<span id="ois2" class="mui-tab-label" style="color: #222222;">交易</span>
+			</a>
+			<a id="o3" class="mui-tab-item" href="#re3">
+				<img id="oi3" src="icons/person.png" class="mui-icon " />
+				<span id="ois3" class="mui-tab-label" style="color: #222222;">我的</span>
+			</a>
+		</nav>
+
+
+
+		
+		<div id="re1" class="mui-control-content mui-active">
+			<h1 style="color: #2AC845;">1111</h1>
+		</div>
+		<!-- <div id="re1" >
+			<iframe src="pages/login/login.html"></iframe>
+		</div> -->
+
+		<div id="re2" class="mui-control-content">
+			<h1 style="color: wheat;">World</h1>
+		</div>
+
+		<div id="re3" class="mui-control-content">
+			<h1 style="color: wheat;">Hello</h1>
+		</div>
+
+
+
+
+
+	</body>
+	<style>
+		.line {
+			width: 100%;
+			height: 1px;
+			background-color: whitesmoke;
 		}
-    </script>
-</head>
-<body>
-	<button type="button" onclick="show()">hello</button>
-</body>
+	
+		.body {
+			margin-top: 50px;
+		}
+	
+		.mui-input-row {
+			margin-top: 10px;
+		}
+	
+		.mui-icon {
+			color: wheat;
+			font-size: 15px;
+		}
+	
+		.code {
+			width: 100%;
+			display: flex;
+			justify-content: flex-end;
+		}
+	
+		.code-c {
+			display: flex;
+			justify-content: center;
+			width: 120px;
+			color: #CF2D28;
+			font-size: 15px;
+			border: 1px solid #CF2D28;
+		}
+	
+		.mui-btn {
+			width: 100%;
+		}
+	
+		.buttom {
+			position: fixed;
+			bottom: 48px;
+			width: 100%;
+			height: 100px;
+		}
+	
+		.b-t-1 {
+			width: 39%;
+			height: 1px;
+			background-color: #0062CC;
+		}
+	
+		.b-t-2 {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 22%;
+		}
+	
+		.b-t {
+			height: 10px;
+			font-size: 10px;
+			color: wheat;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	
+		.b-c {
+			height: 90px;
+			display: flex;
+			flex-direction: row;
+		}
+	
+		.b-c-l {
+			width: 50%;
+			height: 100%;
+		}
+	
+		.mui-icon-weixin {
+			display: flex;
+			justify-content: center;
+			padding-top: 20px;
+		}
+	
+		.b-c-r {
+			width: 50%;
+			height: 100%;
+		}
+	
+		.mui-icon-qq {
+			display: flex;
+			justify-content: center;
+			padding-top: 20px;
+		}
+	</style>
 </html>
+
